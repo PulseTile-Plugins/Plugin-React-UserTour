@@ -1,0 +1,46 @@
+.navbar {
+  z-index: 99 !important;
+}
+
+.__floater__body h4,
+.__floater__body p {
+  text-align: left !important;
+}
+
+.__floater__body h4:not(.tour-body-title)  {
+  color: #558ce1 !important;
+  font-size: 22px !important;
+  font-weight: 600 !important;
+  padding-left: 10px !important;
+  padding-top: 10px !important;
+  margin-bottom: 0 !important;
+}
+
+.__floater__body .tour-body h4 {
+  color: #4b4b4b !important;
+  font-weight: 600 !important;
+  margin-top: 0 !important;
+}
+
+.__floater__body .tour-body p {
+  font-size: 14px !important;
+  margin-bottom: 0 !important;
+}
+
+.__floater__body button {
+  color: #558ce1 !important;
+  font-size: 16px !important;
+  font-weight: 600 !important;
+}
+
+.__floater__body button[title="Next"],
+.__floater__body button[title="Last"] {
+  border: 1px solid #558ce1 !important;
+  border-radius: 16px !important;
+  background-color: #fff !important;
+  padding: 10px !important;
+}
+
+.__floater__body button[title="Close"] {
+  display: none !important;
+}
