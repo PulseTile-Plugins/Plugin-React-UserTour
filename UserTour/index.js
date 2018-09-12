@@ -20,7 +20,7 @@ const UserTour = ({ run }) => {
 };
 
 UserTour.propTypes = {
-  run: PropTypes.boolean,
+  run: PropTypes.bool,
 };
 
 UserTour.defaultProps = {
