@@ -33,7 +33,7 @@ export default class UserTour extends Component {
      */
     checkIsPassed = () => {
         const decodedCookie = decodeURIComponent(document.cookie).split(';');
-        return (-1 === decodedCookie.indexOf(' userTour=passed') && -1 === decodedCookie.indexOf('userTour=passed'));
+        return (-1 === decodedCookie.indexOf('userTour=passed') && -1 === decodedCookie.indexOf(' userTour=passed'));
     };
 
     render() {

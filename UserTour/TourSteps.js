@@ -6,18 +6,18 @@ function getStepsArray(steps) {
     for (let i = 0, n = steps.length; i < n; i++) {
         let item = steps[i];
         result[i] = {
-                title: item.title,
-                target: item.target,
-                content: (
+            title: item.title,
+            target: item.target,
+            content: (
                 <div className="tour-body">
-                <h4 className="tour-body-title">{item.lowTitle}</h4>
-            <p className="tour-body-content">{item.content}</p>
-        </div>
-    ),
-        placement: item.placement,
+                    <h4 className="tour-body-title">{item.lowTitle}</h4>
+                    <p className="tour-body-content">{item.content}</p>
+                </div>
+            ),
+            placement: item.placement,
             disableOverlayClicks: true,
             showSkipButton: true,
-    }
+        }
     }
     return result;
 }
@@ -67,8 +67,26 @@ const steps = [
     },
 ];
 
+const lastStep = {
+    title: 'Welcome to MyHelm.org',
+    target: '#logo-image',
+    content: (
+        <div className="tour-body">
+            <p className="tour-body-content">
+                For more information and a guide on how to use Helm , please go to <a className="link" href="http://myhelm.org" title="MyHelm" target="_blank">
+                    www.myhelm.org
+                </a>
+            </p>
+        </div>
+    ),
+    placement: 'bottom',
+    disableOverlayClicks: true,
+    showSkipButton: true,
+};
 
-export const tourSteps = getStepsArray(steps);
+const stepsArray = getStepsArray(steps);
+
+export const tourSteps = stepsArray.concat(lastStep);
 
 export const toursStyles = {
     options: {
