@@ -24,6 +24,13 @@ function getStepsArray(steps) {
 
 const steps = [
     {
+        title: 'Hello!',
+        lowTitle: 'Welcome to the tour by HelmPHR...',
+        target: '#icon-tour',
+        content: 'Please, click the "Next"...',
+        placement: 'bottom',
+    },
+    {
         title: 'Guided Step 1',
         lowTitle: 'Select the home button at any time...',
         target: '#icon-home',
@@ -79,4 +86,5 @@ export const locale = {
     next: 'Next',
     skip: 'Cancel',
     last: 'Last',
+    back: 'Back',
 };
