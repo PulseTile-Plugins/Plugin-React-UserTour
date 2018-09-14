@@ -27,7 +27,7 @@ const steps = [
         title: 'Hello!',
         lowTitle: 'Welcome to the quick tour of Helm',
         target: '#icon-tour',
-        content: 'Select the home button at any time',
+        content: '',
         placement: 'bottom',
     },
     {
@@ -46,17 +46,17 @@ const steps = [
     },
     {
         title: 'Guided Step 3',
-        lowTitle: 'Select Problems / Issues',
+        lowTitle: 'Click on a heading or icon for further information',
         target: '#summary-panel-problems .board',
-        content: 'View Problems and Diagnosis from your personal health record.',
+        content: 'Click on the icon, or heading to view the detailed information within.',
         placement: 'bottom',
     },
     {
         title: 'Guided Step 4',
-        lowTitle: 'Click on a heading or icon for further information',
+        lowTitle: '',
         target: '#summary-panel-medications .board',
-        content: 'Click on the icon, or heading to view the detailed information within',
-        placement: 'bottom',
+        content: 'Or you can click on a specific individual item to discover relevant detail',
+        placement: 'right',
     },
     {
         title: 'Guided Step 5',
