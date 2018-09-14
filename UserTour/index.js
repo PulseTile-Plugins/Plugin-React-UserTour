@@ -23,6 +23,8 @@ export default class UserTour extends Component {
       const { type } = tour;
       if (type === 'tour:end') {
         document.cookie = 'userTour=passed';
+        document.getElementById('icon-tour').style.display = 'none';
+        document.getElementById('icon-link').style.display = 'block';
       }
     };
 
@@ -33,7 +35,7 @@ export default class UserTour extends Component {
      */
     checkIsPassed = () => {
         const decodedCookie = decodeURIComponent(document.cookie).split(';');
-        return (-1 === decodedCookie.indexOf('userTour=passed') && -1 === decodedCookie.indexOf(' userTour=passed'));
+        return !(-1 !== decodedCookie.indexOf('userTour=passed') || -1 !== decodedCookie.indexOf(' userTour=passed'));
     };
 
     render() {

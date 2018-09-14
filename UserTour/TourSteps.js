@@ -25,16 +25,16 @@ function getStepsArray(steps) {
 const steps = [
     {
         title: 'Hello!',
-        lowTitle: 'Welcome to the tour by HelmPHR...',
+        lowTitle: 'Welcome to the quick tour of Helm',
         target: '#icon-tour',
-        content: 'Please, click the "Next"...',
+        content: 'Select the home button at any time',
         placement: 'bottom',
     },
     {
         title: 'Guided Step 1',
         lowTitle: 'Select the home button at any time...',
         target: '#icon-home',
-        content: 'Press the home button at any time to return to your Patient Dashboard.',
+        content: 'Press the home button at any time to return to your dashboard.',
         placement: 'bottom',
     },
     {
@@ -53,10 +53,10 @@ const steps = [
     },
     {
         title: 'Guided Step 4',
-        lowTitle: 'Select Medications...',
+        lowTitle: 'Click on a heading or icon for further information',
         target: '#summary-panel-medications .board',
-        content: 'The Medications area displays all the registered medications....',
-        placement: 'right',
+        content: 'Click on the icon, or heading to view the detailed information within',
+        placement: 'bottom',
     },
     {
         title: 'Guided Step 5',
@@ -68,7 +68,7 @@ const steps = [
 ];
 
 const lastStep = {
-    title: 'Welcome to MyHelm.org',
+    title: 'End of tour',
     target: '#logo-image',
     content: (
         <div className="tour-body">
