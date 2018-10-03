@@ -92,19 +92,19 @@ export default class UserTour extends Component {
                             <PTButton title="Home" className="btn-header">
                                 <i className="fa fa-question-circle" />
                             </PTButton>
+                            <Joyride
+                                continuous
+                                disableOverlayClose={true}
+                                showSkipButton={true}
+                                showProgress={true}
+                                locale={locale}
+                                steps={tourSteps}
+                                run={isPassed}
+                                styles={toursStyles}
+                                callback={this.callback}
+                            />
                         </Link>
                     }
-                    <Joyride
-                        continuous
-                        disableOverlayClose={true}
-                        showSkipButton={true}
-                        showProgress={true}
-                        locale={locale}
-                        steps={tourSteps}
-                        run={isPassed}
-                        styles={toursStyles}
-                        callback={this.callback}
-                    />
                 </UserPanelItem>
             );
     }
