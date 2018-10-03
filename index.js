@@ -14,13 +14,13 @@ import './style.scss';
 
 export default class UserTour extends Component {
 
-    static propTypes = {
-        run: PropTypes.bool,
-    };
-
-    static defaultProps = {
-        run: false,
-    };
+    // static propTypes = {
+    //     run: PropTypes.bool,
+    // };
+    //
+    // static defaultProps = {
+    //     run: false,
+    // };
 
     state = {
         isTourRun: false,
@@ -86,23 +86,28 @@ export default class UserTour extends Component {
                 <UserPanelItem className="user-panel-item">
                     {(clientUrls.PATIENTS_SUMMARY === pageUrl)
                         ?
-                        (isTourMode ? <UserTourButton runTour={this.runTour} /> : <LinkToCustomer />)
+                        (isTourMode ?
+                            <div>
+                                <UserTourButton runTour={this.runTour} />
+                                <Joyride
+                                    continuous
+                                    disableOverlayClose={true}
+                                    showSkipButton={true}
+                                    showProgress={true}
+                                    locale={locale}
+                                    steps={tourSteps}
+                                    run={isPassed}
+                                    styles={toursStyles}
+                                    callback={this.callback}
+                                />
+                            </div>
+                            :
+                            <LinkToCustomer />)
                         :
                         <Link to={homepageLink} onClick={this.toggleMode}>
                             <PTButton title="Home" className="btn-header">
                                 <i className="fa fa-question-circle" />
                             </PTButton>
-                            <Joyride
-                                continuous
-                                disableOverlayClose={true}
-                                showSkipButton={true}
-                                showProgress={true}
-                                locale={locale}
-                                steps={tourSteps}
-                                run={isPassed}
-                                styles={toursStyles}
-                                callback={this.callback}
-                            />
                         </Link>
                     }
                 </UserPanelItem>
@@ -114,6 +119,7 @@ const UserTourButton = ({ runTour }) => {
     return (
         <PTButton title="User Tour" id="icon-tour" className="btn-header" onClick={() => runTour()}>
             <i className="fa fa-question-circle" />
+
         </PTButton>
     )
 };
