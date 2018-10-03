@@ -8,7 +8,9 @@ import { clientUrls } from '../../../../../config/client-urls.constants';
 import UserPanelItem from '../../../../containers/UserPanel/UserPanelItem';
 import PTButton from '../../../../ui-elements/PTButton/PTButton';
 
-import { tourSteps, toursStyles, locale } from './TourSteps';
+import { tourSteps, toursStyles, locale } from './content';
+
+import './style.scss';
 
 export default class UserTour extends Component {
 
