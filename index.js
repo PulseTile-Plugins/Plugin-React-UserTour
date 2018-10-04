@@ -14,14 +14,6 @@ import './style.scss';
 
 export default class UserTour extends Component {
 
-    // static propTypes = {
-    //     run: PropTypes.bool,
-    // };
-    //
-    // static defaultProps = {
-    //     run: false,
-    // };
-
     state = {
         isTourRun: false,
         isTourMode: true,
