@@ -2,15 +2,24 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import Joyride from 'react-joyride';
 import { Link } from 'react-router-dom';
-import { get } from 'lodash';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { compose } from 'recompose';
 
 import { clientUrls } from '../../../../../config/client-urls.constants';
 import UserPanelItem from '../../../../containers/UserPanel/UserPanelItem';
 import PTButton from '../../../../ui-elements/PTButton/PTButton';
-
+import { setSidebarVisibility } from '../../../../../ducks/set-sidebar-visibility';
+import { sidebarSelector } from './selector';
 import { tourSteps, toursStyles, locale } from './content';
-
 import './style.scss';
+
+const mapDispatchToProps = dispatch => ({
+    actions: bindActionCreators({
+        setSidebarVisibility,
+    }, dispatch)
+});
+@compose(connect(sidebarSelector, mapDispatchToProps))
 
 export default class UserTour extends Component {
 
@@ -26,11 +35,17 @@ export default class UserTour extends Component {
    */
   callback = (tour) => {
     const { type } = tour;
+    const { actions } = this.props;
+
     if (type === 'tour:end') {
       document.cookie = 'userTour=passed';
       this.setState({
         isTourMode: !this.state.isTourMode,
       })
+    }
+
+    if (type === 'tooltip' && window.innerWidth < 768) {
+        actions.setSidebarVisibility(false);
     }
   };
 
