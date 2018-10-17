@@ -79,6 +79,10 @@ export default class UserTour extends Component {
 
   render() {
     const { pageUrl, homepageLink } = this.props;
+    const homepageLocation = {
+      pathname: homepageLink,
+      hash: '',
+    };
     const { isTourRun, isTourMode } = this.state;
     const isPassed = (this.checkIsPassed() || isTourRun);
     return (
@@ -103,8 +107,8 @@ export default class UserTour extends Component {
               :
             <LinkToCustomer />)
             :
-          <Link to={homepageLink} onClick={this.toggleMode}>
-            <PTButton title="Home" className="btn-header">
+          <Link to={homepageLocation}>
+            <PTButton title="Home" className="btn-header" onClick={this.toggleMode}>
               <i className="fa fa-question-circle" />
             </PTButton>
           </Link>
