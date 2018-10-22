@@ -11,7 +11,7 @@ import UserPanelItem from '../../../../containers/UserPanel/UserPanelItem';
 import PTButton from '../../../../ui-elements/PTButton/PTButton';
 import { setSidebarVisibility } from '../../../../../ducks/set-sidebar-visibility';
 import { sidebarSelector } from './selector';
-import { tourSteps, toursStyles, locale } from './content';
+import { tourSteps, toursStyles, locale, homepage, themeStyles } from './content';
 import './style.scss';
 
 const mapDispatchToProps = dispatch => ({
@@ -20,7 +20,6 @@ const mapDispatchToProps = dispatch => ({
     }, dispatch)
 });
 @compose(connect(sidebarSelector, mapDispatchToProps))
-
 export default class UserTour extends Component {
 
   state = {
@@ -132,10 +131,15 @@ UserTourButton.defaultProps = {
   runTour: function () { },
 };
 
+/**
+ * Link to the Customer homepage
+ *
+ * @return {XML}
+ */
 const LinkToCustomer = () => {
   return (
-    <a href="http://myhelm.org" target="_blank">
-      <PTButton title="MyHelm.org" id="icon-link" className="btn-header">
+    <a href={homepage.link} target="_blank">
+      <PTButton title={homepage.title} id="icon-link" className="btn-header">
         <i className="fa fa-question-circle" />
       </PTButton>
     </a>
