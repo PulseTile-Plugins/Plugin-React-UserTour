@@ -107,7 +107,7 @@ export default class UserTour extends Component {
             <LinkToCustomer />)
             :
           <Link to={homepageLocation}>
-            <PTButton title="Home" className="btn-header" onClick={this.toggleMode}>
+            <PTButton title="Home" className="btn-header" aria-label="Home" onClick={this.toggleMode}>
               <i className="fa fa-question-circle" />
             </PTButton>
           </Link>
@@ -119,7 +119,7 @@ export default class UserTour extends Component {
 
 const UserTourButton = ({ runTour }) => {
   return (
-    <PTButton title="User Tour" id="icon-tour" className="btn-header" onClick={() => runTour()}>
+    <PTButton title="User Tour" id="icon-tour" className="btn-header" aria-label="User Tour" onClick={() => runTour()}>
       <i className="fa fa-question-circle" />
     </PTButton>
   );
@@ -139,7 +139,7 @@ UserTourButton.defaultProps = {
 const LinkToCustomer = () => {
   return (
     <a href={homepage.link} target="_blank">
-      <PTButton title={homepage.title} id="icon-link" className="btn-header">
+      <PTButton title={homepage.title} id="icon-link" className="btn-header" aria-label={homepage.title}>
         <i className="fa fa-question-circle" />
       </PTButton>
     </a>
