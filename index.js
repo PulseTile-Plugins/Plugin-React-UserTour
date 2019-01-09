@@ -85,7 +85,7 @@ export default class UserTour extends Component {
     const { isTourRun, isTourMode } = this.state;
     const isPassed = (this.checkIsPassed() || isTourRun);
     return (
-      <UserPanelItem className="user-panel-item">
+      <UserPanelItem className="user-panel-item" role="tab">
         {(clientUrls.PATIENTS_SUMMARY === pageUrl)
           ?
           (isTourMode ?
